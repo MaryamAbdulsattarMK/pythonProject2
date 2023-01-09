@@ -2,6 +2,18 @@ from rest_framework import serializers
 from .models import Sign_Up, Autherized_post, Chat, Post, Type_item, Access_admin_for_users, Login
 
 
+
+from rest_framework import serializers
+from .models import Todo
+
+class TodoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Todo
+        fields = "__all__"
+
+
+
+
 class Sign_upSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sign_Up
