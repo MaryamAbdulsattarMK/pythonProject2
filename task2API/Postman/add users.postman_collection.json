@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "61d08cad-2358-43ac-b0a5-1e6c81485b1d",
+		"name": "add users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10052141"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "3b13f250be72563e91a06c1624780d287bd3ae5f",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "080bdf8d53c7f0bc0c9812b7ed87718045a735c6\nHISTORY\n\n",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "3b13f250be72563e91a06c1624780d287bd3ae5f",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n        \r\n        \"user_name\": \"hbjjghghf\",\r\n        \"phone_number\": 2115465234,\r\n        \"location\": \"dfd\",\r\n        \"password\": \"qwieqwwsjdhfksd\",\r\n        \"Sign_Up_date\": \"2023-01-13T00:00:00Z\",\r\n        \"gender\": false,\r\n        \"accessForAdmin\": true\r\n        \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/users",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

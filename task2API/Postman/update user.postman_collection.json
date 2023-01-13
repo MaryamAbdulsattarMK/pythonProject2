@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "3a5a3f12-51c2-4e83-aa5c-cef408d8793b",
+		"name": "update user",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10052141"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/users",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "3b13f250be72563e91a06c1624780d287bd3ae5f",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "080bdf8d53c7f0bc0c9812b7ed87718045a735c6\nHISTORY\n\n",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "3b13f250be72563e91a06c1624780d287bd3ae5f",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"id\":3,\r\n    \"user_name\": \"Admin\",\r\n    \"phone_number\": 2147483647,\r\n    \"location\": \"mosul\",\r\n    \"password\": \"Admin\",\r\n    \"Sign_Up_date\": \"2023-01-09T00:00:00Z\",\r\n    \"gender\": false,\r\n    \"accessForAdmin\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

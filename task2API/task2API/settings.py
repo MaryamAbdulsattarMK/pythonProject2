@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+from datetime import timedelta
 
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 MEDIA_URL='/Photos/'
@@ -46,7 +47,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'mafqodat',
     'coreapi',
-    'todo',
+
 
 ]
 
@@ -54,11 +55,17 @@ INSTALLED_APPS = [
 CORS_ORIGIN_ALLOW_ALL =True
 
 REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 4,
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
     ],
+
 }
+
+
+
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -72,6 +79,16 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'task2API.urls'
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=2),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'SIGNING_KEY': SECRET_KEY,
+    'AUTH_HEADER_TYPES': ('Bearer',),
+
+    #"Bearer <Token>"
+}
+
 
 TEMPLATES = [
     {
