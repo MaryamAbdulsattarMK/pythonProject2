@@ -1,3 +1,6 @@
+import datetime
+from django.utils import timezone
+
 from django.db import models
 
 
@@ -21,7 +24,7 @@ class Sign_Up(models.Model):
     phone_number = models.IntegerField()
     location = models.CharField(max_length=250)
     password = models.CharField(max_length=50 )
-    Sign_Up_date = models.DateTimeField()
+    Sign_Up_date = models.DateField(auto_created=True,default=timezone.now)
     gender = models.BooleanField()
     accessForAdmin = models.BooleanField()
 
@@ -44,18 +47,16 @@ class Type_item(models.Model):
 
 class Post(models.Model):
     id = models.AutoField(primary_key=True)
-    auther_id = models.ForeignKey('Sign_Up', on_delete=models.CASCADE,default=1)
-    name_missing_item = models.TextField()
-    type_item_id = models.ForeignKey('Type_item', on_delete=models.CASCADE,default=1)
+    Name = models.CharField(max_length=250)
     image = models.CharField(max_length=250)
     location = models.CharField(max_length=250)
-    contact_number = models.IntegerField()
-    post_detail = models.TextField()
-    uploaded_date = models.DateTimeField()
-    edit_date = models.DateTimeField()
-    Aprovement_Not = models.BooleanField()
-    active = models.IntegerField()
-    access_admin_user = models.ForeignKey('Access_admin_for_users', on_delete=models.CASCADE,default=1)
+    phone_number = models.IntegerField()
+    By_user= models.TextField()
+    Date = models.DateField(auto_created=True,default=timezone.now)
+    chat_count = models.IntegerField()
+    Action = models.TextField()
+    #date_of_edit = models.DateField(datetime.date,default="1-1-1950")
+
 
 
 class Chat(models.Model):

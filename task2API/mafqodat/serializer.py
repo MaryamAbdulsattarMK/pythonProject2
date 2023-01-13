@@ -38,7 +38,7 @@ class Type_itemSerializer(serializers.ModelSerializer):
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ('id', 'auther_id','name_missing_item','type_item_id','image','location','contact_number','post_detail','uploaded_date',' edit_date','Aprovement_Not','active','access_admin_user')
+        fields = ('id', 'Name','image','location','phone_number','By_user','Date','chat_count','Action')
 
 class chatSerializer(serializers.ModelSerializer):
     class Meta:

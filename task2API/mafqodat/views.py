@@ -434,7 +434,7 @@ def LoginAPI(request,login_id=0):
 def sign_upapi(request,Sign_Up_Id=0):
     if request.method == 'GET':
         signUp = Sign_Up.objects.get(id=Sign_Up_Id)
-        signUp_serializer = Sign_upSerializer(signUp['password'])
+        signUp_serializer = Sign_upSerializer(signUp)
         return JsonResponse(signUp_serializer.data, safe=False)
     elif request.method == 'POST':
         signUp_data = JSONParser().parse(request)
