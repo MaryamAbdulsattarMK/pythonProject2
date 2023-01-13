@@ -1,13 +1,14 @@
 #usage 
 #Libraries
 
->rest_framework.authtoken
->rest_framework
->coreapi
+1.>rest_framework.authtoken
+2.>rest_framework
+3.>coreapi
 
 
 #run 
->open xammp apache and mysql
+1. >open xammp apache and mysql
+2. 
 ```
 python manage.py makemagraition
 python manage.py magration 
